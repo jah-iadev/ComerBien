@@ -38,3 +38,4 @@ Route::resource('/user', UserController::class);
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [RestauranteController::class, 'main'])->name('main');
 Route::get('/pageRestaurante/{id}', [RestauranteController::class, 'page_restaurante'])->name('page');
+Route::resource('/comentario', App\Http\Controllers\ComentarioController::class);

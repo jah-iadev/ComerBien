@@ -18,6 +18,16 @@
     </div>
 </div>
 
+<div class="form-group mb-3">
+    <label class="form-label">   {{ Form::label('password') }}</label>
+    <div>
+        {{ Form::text('password', $user->password, ['class' => 'form-control' .
+        ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' => 'Email']) }}
+        {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">user <b>password</b> instruction.</small>
+    </div>
+</div>
+
     <div class="form-footer">
         <div class="text-end">
             <div class="d-flex">

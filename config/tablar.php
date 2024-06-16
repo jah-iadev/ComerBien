@@ -183,6 +183,14 @@ return [
             'active' => ['support4'],
             //'submenu' => [],
         ],
+
+        [
+            'text' => 'Comentarios',
+            'url' => '/comentario',
+            'icon' => 'ti ti-book',
+            'active' => ['support5'],
+            //'submenu' => [],
+        ],
         /*[
             'text' => 'Support 3',
             'url' => '#',
