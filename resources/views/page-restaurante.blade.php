@@ -45,6 +45,32 @@
                 @endforelse
             </div>
         </div>
+        @auth
+        <div class="container">
+        <form action="{{ route('comentario.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="content">Añadir Comentario</label>
+                <textarea class="form-control" id="comentario" name="comentario" rows="3" required></textarea>
+                <input type="hidden" name="usuario_id" value="{{ Auth::id() }}">
+                <input type="hidden" name="restaurante_id" value="{{ $restaurante->id }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <h2 class="mt-5">Todos los Comentarios</h2>
+        <ul class="list-group">
+            @foreach ($comentarios as $comentario)
+                <li class="list-group-item">
+                    {{ $comentario->comentario }}
+                    <br>
+                    <small>Publicado el {{ $comentario->created_at->format('d/m/Y H:i') }}</small>
+                    por el Usuario Id: {{ $comentario->usuario_id }}
+                </li>
+            @endforeach
+        @endauth
+        </ul>
+        </div>
 @include ('partials.footer')
 @yield('tablar_js')
 </html>

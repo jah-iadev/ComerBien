@@ -6,6 +6,7 @@ use App\Models\FotosRestaurante;
 use App\Models\Plato;
 use App\Models\FotosPlato;
 use App\Models\Restaurante;
+use App\Models\Comentario;
 use Illuminate\Http\Request;
 
 /**
@@ -155,6 +156,7 @@ class RestauranteController extends Controller
         $foto = FotosRestaurante::where('restaurante_id', $id)->first();
         $platos = Plato::where('restaurante_id', $id)->get();
         $fotosPlato = FotosPlato::all();
+        $comentarios = Comentario::where('restaurante_id', $id)->get();
         
         $fotos_Plato = [];
         if (!empty($platos)) {
@@ -172,8 +174,7 @@ class RestauranteController extends Controller
         } else {
             echo '<p>No hay restaurantes disponibles</p>';
         }
-        //dd($fotos_Plato);
 
-        return view('page-restaurante', compact('restaurante', 'platos', 'foto', 'fotos_Plato'));
+        return view('page-restaurante', compact('restaurante', 'platos', 'foto', 'fotos_Plato', 'comentarios'));
     }
     }

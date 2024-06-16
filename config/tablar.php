@@ -10,7 +10,7 @@ return [
     |
     */
 
-    'title' => 'Tablar',
+    'title' => 'ComerbienenMurcia.com - Administración',
     'title_prefix' => '',
     'title_postfix' => '',
     'bottom_title' => 'Tablar',
@@ -42,7 +42,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'assets/comer-bien.png',
+            'path' => '/assets/comer-bien.png',
             'alt' => 'Logo Comer bien en Murcia',
             'class' => '',
             'width' => 100,
@@ -145,6 +145,14 @@ return [
     'menu' => [
         // Navbar items:
 
+        
+        [
+            'text' => 'Ir a la WEB',
+            'url' => '/',
+            'icon' => 'ti ti-web',
+            'active' => ['support8'],
+            //'submenu' => [],
+        ],
         [
             'text' => 'Usuarios',
             'url' => '/user',

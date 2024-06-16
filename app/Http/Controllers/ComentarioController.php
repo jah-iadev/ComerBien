@@ -47,8 +47,9 @@ class ComentarioController extends Controller
 
         $comentario = Comentario::create($request->all());
 
-        return redirect()->route('comentario.index')
-            ->with('success', 'Comentario created successfully.');
+        return redirect()->to('/pageRestaurante/'. $request->restaurante_id);
+
+
     }
 
     /**
@@ -91,7 +92,7 @@ class ComentarioController extends Controller
         $comentario->update($request->all());
 
         return redirect()->route('comentario.index')
-            ->with('success', 'Comentario updated successfully');
+            ->with('success', 'Comentario actualizado correctamente');
     }
 
     /**
@@ -104,6 +105,6 @@ class ComentarioController extends Controller
         $comentario = Comentario::find($id)->delete();
 
         return redirect()->route('comentario.index')
-            ->with('success', 'Comentario deleted successfully');
+            ->with('success', 'Comentario borrado correctamente');
     }
 }

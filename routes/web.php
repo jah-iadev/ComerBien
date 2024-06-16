@@ -7,6 +7,7 @@ use App\Http\Controllers\PlatoController;
 use App\Http\Controllers\FotosRestauranteController;
 use App\Http\Controllers\FotosplatoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ComentarioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,4 +39,4 @@ Route::resource('/user', UserController::class);
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [RestauranteController::class, 'main'])->name('main');
 Route::get('/pageRestaurante/{id}', [RestauranteController::class, 'page_restaurante'])->name('page');
-Route::resource('/comentario', App\Http\Controllers\ComentarioController::class);
+Route::resource('/comentario', ComentarioController::class);
